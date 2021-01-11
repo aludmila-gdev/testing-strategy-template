@@ -51,7 +51,7 @@ The test scenarios were modeled based on the following techniques:
 
 ### List of test scenarios:
 |        ID          |                               Description                                            |  Technique |
-|       :----:       |                             --------------                                           | --------- |
+|   :-------------:  |                             --------------                                           | --------- |
 |      [CT-001]      | Check system behavior when **valid** email id and password is entered.               |     |
 |      [CT-002]      | Check system behavior when **invalid** email id and **valid** password is entered.   |     |
 |      [CT-003]      | Check system behavior when **invalid** email id and **invalid** password is entered. |     |
