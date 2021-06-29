@@ -1,211 +1,212 @@
-# Acceptance testing strategy 
+# Estratégia de testes de aceitação
 ------
-## About the strategy
-What is this document? what do i find in it? how was it divided? What topics does it contain? If possible, include anchor links for navigation in this document.
+## Sobre a estratégia
+O que é este documento? o que eu encontro nele? como foi dividido? Que tópicos contém? Se possível, inclua links de âncora para navegação neste documento.
 
-This documentation has the following sections:
+Esta documentação possui as seguintes seções:
 
-1. [Test Approach](#test-approach)
-2. [Test Deliverables](#test-deliverables)
-3. [Test scenarios](#test-scenarios)
-4. [Test Environment](#test-environment)
-5. [Approach to test automation](#approach-to-test-automation)
-    * [Choosing the tool for automating UI tests](#choosing-the-tool-for-automating-UI-tests)
-    * [Choosing the tests that will be automated in the UI](#choosing-the-tests-that-will-be-automated-in-the-UI)
-6. [Running the tests scripts](#running-the-tests-scripts)
-7. [Test Report](#test-report)
-8. [Dependencies](#dependencies)
-9. [Bug Report](#bug-report)
-10. [References](#references)
-
-- - - -
-## Test Approach
-How are the tests described? (Gherkin, step by step, etc).
-
-Where do I find detailed test cases?
-
-How were the tests prioritized? What criteria are used?
-
-What levels of testing will be performed? What were the criteria for this decision?
-
-What types of testing will be performed ( Load testing, Security testing, Performance testing, CrossBrowser testing etc.)? What were the criteria for this decision?
+1. [Abordagem de teste](#abordagem-de-teste)
+2. [Entregáveis de teste](#entregaveis-de-teste)
+3. [Cenários de teste](#cenarios-de-teste)
+4. [Ambiente de Testes](#ambiente-de-testes)
+5. [Abordagem para automação de teste](#abordagem-para-automacao-de-teste)
+    * [Escolhendo a ferramenta para automatizar testes de UI](#escolhendo-a-ferramenta-para-automatizar-testes-de-ui)
+    * [Escolha dos testes que serão automatizados na UI](#ecolha-dos-testes-que-serao-automatizados-na-ui)
+6. [Executando os scripts de teste](#executando-os-scripts-de-teste)
+7. [Relatório de teste](#relatorio-de-teste)
+8. [Dependências](#dependencias)
+9. [Relatório de erros](#relatorio-de-erros)
+10. [Referências](#referencias)
 
 - - - -
-## Test Deliverables
-* The test deliverables are:
-    * Features files, with description of test cases and scenarios;
-    * **_[LANGUAGE]_** codebase using **_[FRAMEWORK]_**;
-    * **_[FORMAT]_** reports located in the **_[PATH]_**;
-    * Test evidences in **_[FORMAT]_** located **_[PATH]_**;
-    * Execution scripts using **_[SCRIPT LANGUAGE USED (MAKE, RAKE, ETC)]_**. The intention is that the tests are subject to integration in a pipeline.
-    * Defects report which will be described in tool **_[BUG TRACKING TOOL]_**. [Link to access the bug tracking tool here.](https://www.google.com)
+## Abordagem de teste
+
+Como os cenários de teste serão descritos? _(Gherkin, passo a passo, etc)_
+
+Onde encontro casos de teste detalhados? _(Ferramenta de gestão de testes, caminhos no repositório, etc)_
+
+Como os testes foram priorizados? Que critérios foram usados? Quem foram as pessoas envolvidas durante esta priorização?
+
+Quais níveis de teste serão realizados? Quais foram os critérios para esta decisão?
+
+Que tipos de teste não funcionais serão realizados (teste de carga, teste de segurança, teste de desempenho, teste CrossBrowser etc.)? Quais foram os critérios utilizados para esta decisão?
+
 
 - - - -
-## Test scenarios
+## Entregáveis de teste
+* Os estregáveis de teste são:
+    * Arquivos .feature, contendo a descrição dos cenários e casos de teste no formato Gherkin;
+    * Base de código **_[LINGUAGEM DE PROGRAMAÇÃO]_** utilizando o framework **_[FRAMEWORK]_** (Bitbucket, Github, etc);
+    * Relatórios **_[FORMATO DO RELATÓRIO]_** localizados em **_[CAMINHO DO RELATÓRIO]_**;
+    * Evidências de teste no formato **_[FORMATO]_** localizadas em **_[CAMINHO DAS EVIDÊNCIAS]_**;
+    * Scripts de execução dos testes **_[LINGUAGEM DE SCRIPTS UTILIZADA (MAKE, RAKE, ETC)]_**. A intenção é que os testes sejam passíveis de integração em pipeline.
+    * Relatório de defeitos que será descrito na ferramenta **_[FERRAMENTA DE GESTÃO DE DEFEITOS]_**. [Link para acessar a ferramenta aqui.](https://www.google.com)
 
-The test scenarios were modeled based on the following techniques:
-* Equivalence Partitioning
-* Boundary Testing
-* Decision Table
-* State Transition Testing
+- - - -
+## Cenários de teste
 
-### List of test scenarios:
-|        ID          |                               Description                                            |  Technique |
+Os cenários de teste foram modelados com base nas seguintes técnicas:
+* Particionamento de equivalência
+* Análise de valor limite
+* Tabela de Decisão
+* Teste de transição de estado
+
+### Lista de cenários de teste:
+|        ID          |                               Descrição                                            |  Técnica |
 |   :-------------:  |                             --------------                                           | --------- |
-|      [CT-001]      | Check system behavior when **valid** email id and password is entered.               |     |
-|      [CT-002]      | Check system behavior when **invalid** email id and **valid** password is entered.   |     |
-|      [CT-003]      | Check system behavior when **invalid** email id and **invalid** password is entered. |     |
-|      [CT-004]      | Check system behavior when email id and password are left blank and Sign in entered. |     |
-|      [CT-005]      | Check Forgot your password is working as expected.                                   |     |
+|      [CT-001]      | Verifique o comportamento do sistema quando um e-mail e uma senha **válidos** forem inseridos.|     |
+|      [CT-002]      | Verifique o comportamento do sistema quando um email **inválido** e uma senha **válida** forem inseridos.|     |
+|      [CT-003]      | Verifique o comportamento do sistema quando o email **inválido** e a senha **inválida** forem inseridos. |     |
+|      [CT-004]      | Verifique o comportamento do sistema quando o e-mail e a senha forem deixados em branco. |     |
+|      [CT-005]      | Verifique se _**Esqueceu sua senha**_ está funcionando como esperado.                                   |     |
 
 - - - -
-## Test Environment
-Below are all the tools / platforms used during the development of the testing strategy and automated testing code:
+## Ambiente de Testes
+Abaixo estão todas as ferramentas/plataformas usadas durante o desenvolvimento da estratégia de teste e do código de teste automatizado:
 
-
-|        Item        |        Description        |        Version        |        Note        | 
+|        Item        |        Descrição        |        Versão        |        Nota        | 
 |       :----:       |        -----------        |       :-------:       |        ----        | 
-| IntelliJ IDEA      |           IDE             |        Last           |         N/A        |
-| Google Chrome      | Testing browser           |       87.0.4280.88    |         N/A        |
-|    Pa11y           | Accessibility testing automation tool |  5.0.0    |         N/A        |
-| GitHub             | Code repository and documentation |   N/A         |         N/A        |
-| Tool/Requirement   | Description               |        Last           |         N/A        |
-| Tool/Requirement   | Description               |        Last           |         N/A        |
+| IntelliJ IDEA      |           IDE             |        Última disponível           |         N/A        |
+| Google Chrome      | Testes de navegador           |       87.0.4280.88    |         N/A        |
+|    Pa11y           | Ferramenta de automação de teste de acessibilidade |  5.0.0    |         N/A        |
+| GitHub             | Repositório de código e documentação |   N/A         |         N/A        |
+| Ferramenta/Plataforma   | Descrição               |        Última disponível            |         N/A        |
+| Ferramenta/Plataforma   | Descrição               |        Última disponível            |         N/A        |
 
 - - - -
-##  Approach to test automation
+## Abordagem para automação de teste
 
-### Choosing the tool for automating UI tests
+### Escolhendo a ferramenta para automatizar testes de UI
 
-The automation tool was chosen based on the following criteria:
+A ferramenta de automação foi escolhida com base nos seguintes critérios:
 
-**!!! DELETE CRITERIA THAT DO NOT APPLY AND LEAVE ONLY THOSE THAT WERE REALLY USED!!!**
+**!!! APAGAR CRITÉRIOS QUE NÃO SE APLICAM E DEIXAR SOMENTE OS QUE FORAM REALMENTE UTILIZADOS !!!**
 
-* **Ease of Developing and Maintaining the Scripts:** Development & maintenance of test scripts should be as simple as possible to decrease the human and time resource utilization.
-* **Ease of Test Execution for Non-Technical user:** The test suite execution should be simple for any project member to run them easily as and when required. Also, it should be easy for manual testers who have very little or no technical knowledge.
-* **Support to Web, Desktop & Mobile application:** Leveraging 3 different tools for 3 types of platforms for test automation is a complicated task to handle. It is better to select a tool that supports all the three platforms.
-* **Intuitive Test Report:** Test reports build confidence and so the reports need to be intuitive and simple for the management team to understand easily.
-* **Cross Browser Testing:** Support to Cross browser testing is a must when there are multiple end-users and no particular browser restriction.
-* **Support to Keyword & Data Driven Testing:** Keyword driven testing acts as an extension to the data driven testing framework. When a project becomes complex, test framework needs to be extended.
-* **Technical Support and Assistance:** Automation Engineers definitely need help while handling critical problems of a project. The tool that provides technical support and assistance would be of great help.
-* **Language Support like C#, Java, Python and others:** Every test scenario cannot be recorded. In some cases, the tester must write the code. So, the tool that supports the required language to write the customized scripts would be helpful.
-* **TFS DevOps integration with builds:** Support to integrate with Continuous Integration tools for automated builds and deployments is necessary.
-* **Pricing:** Depending on the above qualities and project cost estimates, evaluate the cost difference among the other available automation tools.
+* **Facilidade de desenvolver e manter os scripts:** O desenvolvimento e a manutenção dos scripts de teste devem ser o mais simples possível para diminuir a utilização de recursos humanos e de tempo.
+* **Facilidade de execução de testes para usuários não técnicos:** A execução do conjunto de testes deve ser simples para qualquer membro do projeto para executá-los facilmente como e quando necessário. Além disso, deve ser fácil para testadores manuais com muito pouco ou nenhum conhecimento técnico.
+* **Suporte para aplicativos da Web, Desktop e Mobile:** Aproveitar 3 ferramentas diferentes para 3 tipos de plataformas para automação de teste é uma tarefa complicada de lidar. É melhor selecionar uma ferramenta que suporte todas as três plataformas.
+* **Relatório de teste intuitivo:** Os relatórios de teste aumentam a confiança e, portanto, os relatórios precisam ser intuitivos e simples para que a equipe de gerenciamento os compreenda facilmente.
+* **Teste entre navegadores:** O suporte ao teste entre navegadores é obrigatório quando há vários usuários finais e nenhuma restrição específica do navegador.
+* **Suporte para teste orientado por palavras-chave e dados:** O teste orientado por palavras-chave atua como uma extensão da estrutura de teste orientado por dados. Quando um projeto se torna complexo, a estrutura de teste precisa ser estendida.
+* **Suporte e assistência técnica:** Os engenheiros de automação definitivamente precisam de ajuda ao lidar com problemas críticos de um projeto. A ferramenta que fornece suporte técnico e assistência seria de grande ajuda.
+* **Suporte de linguagem como C #, Java, Python e outros:** Todos os cenários de teste não podem ser registrados. Em alguns casos, o testador deve escrever o código. Portanto, a ferramenta que oferece suporte ao idioma necessário para escrever os scripts personalizados seria útil.
+* **Integração TFS DevOps com compilações:** Suporte para integração com ferramentas de integração contínua para compilações e implantações automatizadas é necessário.
+* **Preço:** Dependendo das qualidades acima e das estimativas de custo do projeto, avalie a diferença de custo entre as outras ferramentas de automação disponíveis.
 
-### Choosing the tests that will be automated in the UI
-Below, the criteria that were used to decide which tests are good candidates for automation:
+### Escolha dos testes que serão automatizados na UI
+Abaixo, os critérios que foram usados para decidir quais testes são bons candidatos para automação:
 
-**!!!!!!! DELETE CRITERIA THAT DO NOT APPLY AND LEAVE ONLY THOSE THAT WERE REALLY USED!!!!!**
-_How do you choose which tests to automate and which tests to leave for manual testing?_
+**!!!!!!! APAGAR CRITÉRIOS QUE NÃO SE APLICAM E DEIXAR SOMENTE OS QUE FORAM REALMENTE UTILIZADOS !!!!!**
 
-**Tests that should be automated:**
-* Business critical paths - the features or user flows that if they fail, cause a considerable damage to the business.
-* Tests that need to be run against every build/release of the application, such as smoke test, sanity test and regression test.
-* Tests that need to run against multiple configurations — different OS & Browser combinations.
-* Tests that execute the same workflow but use different data for its inputs for each test run e.g. data-driven.
-* Tests that involve inputting large volumes of data, such as filling up very long forms.
-* Tests that can be used for performance testing, like stress and load tests.
-* Tests that take a long time to perform and may need to be run during breaks or overnight.
-* Tests during which images must be captured to prove that the application behaved as expected, or to check that a multitude of web pages looks the same on multiple browsers.
-* Generally speaking, the more repetitive the test run, the better it is for automation.
+_Como você escolhe quais testes automatizar e quais testes deixar para o teste manual?_
 
-**Tests that should not be automated:**
-* Tests that you will only run only once. The only exception to this rule is that if you want to execute a test with a very large set of data, even if it’s only once, then it makes sense to automate it.
-* User experience tests for usability (tests that require a user to respond as to how easy the app is to use).
-* Tests that need to be run ASAP. Usually, a new feature which is developed requires a quick feedback so testing it manually at first
-* Tests that require ad hoc/random testing based on domain knowledge/expertise - Exploratory Testing.
-* Intermittent tests. Tests without predictable results cause more noise that value. To get the best value out of automation the tests must produce predictable and reliable results in order to produce pass and fail conditions.
-* Tests that require visual confirmation, however, we can capture page images during automated testing and then have a manual check of the images.
-* Test that cannot be 100% automated should not be automated at all, unless doing so will save a considerable amount of time.
+**Testes que devem ser automatizados:**
+* Caminhos críticos para os negócios - os recursos ou fluxos de usuários que, se falharem, causam danos consideráveis ​​aos negócios.
+* Testes que precisam ser executados em cada build / lançamento do aplicativo, como teste de fumaça, teste de sanidade e teste de regressão.
+* Testes que precisam ser executados em várias configurações - diferentes combinações de sistema operacional e navegador.
+* Testes que executam o mesmo fluxo de trabalho, mas usam dados diferentes para suas entradas para cada execução de teste, por exemplo, orientado por dados.
+* Testes que envolvem a entrada de grandes volumes de dados, como o preenchimento de formulários muito longos.
+* Testes que podem ser usados ​​para testes de desempenho, como testes de estresse e carga.
+* Testes que demoram muito para serem realizados e podem precisar ser executados durante os intervalos ou durante a noite.
+* Testes durante os quais as imagens devem ser capturadas para provar que o aplicativo se comportou conforme o esperado ou para verificar se uma infinidade de páginas da web tem a mesma aparência em vários navegadores.
+* De modo geral, quanto mais repetitivo o teste, melhor para a automação.
 
-### List of scenarios that have been automated based on established criteria
-* CT-001 - Check system behavior when **valid** email id and password is entered. 
-* CT-002 - Check system behavior when **invalid** email id and **valid** password is entered.
-* CT-003 - Check system behavior when **invalid** email id and **invalid** password is entered.
-* CT-004 - Check system behavior when email id and password are left blank and Sign in entered.
-* CT-005 - Check Forgot your password is working as expected.
+**Testes que não devem ser automatizados:**
+* Testes que você executará apenas uma vez. A única exceção a esta regra é que se você deseja executar um teste com um conjunto muito grande de dados, mesmo que seja apenas uma vez, faz sentido automatizá-lo.
+* Testes de experiência do usuário para usabilidade (testes que exigem que o usuário responda sobre a facilidade de uso do aplicativo).
+* Testes que precisam ser executados o mais rápido possível. Normalmente, um novo recurso que é desenvolvido requer um feedback rápido, portanto, testando-o manualmente no início
+* Testes que requerem teste ad hoc / aleatório com base no conhecimento / experiência do domínio - Teste Exploratório.
+* Testes intermitentes. Testes sem resultados previsíveis causam mais ruído desse valor. Para obter o melhor valor da automação, os testes devem produzir resultados previsíveis e confiáveis ​​para produzir condições de aprovação e reprovação.
+* Testes que requerem confirmação visual, no entanto, podemos capturar imagens da página durante o teste automatizado e, em seguida, fazer uma verificação manual das imagens.
+* Testes que não podem ser 100% automatizados não devem ser automatizados de forma alguma, a menos que isso economize uma quantidade considerável de tempo.
+
+### Lista de cenários que foram automatizados com base em critérios estabelecidos
+* CT-001 - Verifique o comportamento do sistema quando a id de e-mail e a senha **válidas** forem inseridas.
+* CT-002 - Verifique o comportamento do sistema quando um id de e-mail **inválido** e uma senha **válida** forem inseridos.
+* CT-003 - Verifique o comportamento do sistema quando um id de email **inválido** e uma senha **inválida** forem inseridos.
+* CT-004 - Verifique o comportamento do sistema quando a id de e-mail e a senha forem deixadas em branco e o Login for inserido.
+* CT-005 - Verifique se **_Esqueceu sua senha_** está funcionando como esperado.
 
 - - - -
-## Running the tests scripts
-* The following scripts do, respectively:
+## Executando os scripts de teste
+* Os seguintes scripts fazem, respectivamente:
 
-| Description		| 	Command   |
+| Descrição		| 	Comando   |
 |	----------		|	:-------------:	|
-| Install dependencies	 |   `make setup` | 
-| Run tests on **Chrome** |     `make e2e_tests_on_chrome`    |
-| Run tests on **Firefox** |  `make e2e_tests_on_firefox` |
-| Run tests on **Safari** |  `make e2e_tests_on_safari` |
+| Instala as dependências necessárias para o projeto	 |   `make setup` | 
+| Executas os testes automatizados no navegador **Chrome** |     `make e2e_tests_on_chrome`    |
+| Executas os testes automatizados no navegador **Firefox** |  `make e2e_tests_on_firefox` |
+| Executas os testes automatizados no navegador **Safari** |  `make e2e_tests_on_safari` |
 
 - - - -
-## Test Report
-* Below is an image of the test execution report:
+## Relatório de teste
+* Abaixo está uma imagem do relatório de execução do teste:
 
  ![](README/report_screenshot.png)
 
 - - - -
-## Dependencies
-The dependencies used in the functional testing automation project are:
+## Dependências
+As dependências usadas no projeto de automação de testes funcionais são:
 
-| Tool		| 	Version   |
+| Dependência		| 	Versão   |
 |----------		|   :-------------:	|
-| TOOL1 		|   `2.7.0` 	| 
-| TOOL2 	|     `3.1.2`    	|
-| TOOL3 	|     `3.32.1`    	|
-| TOOL4 	|     `3.4.2`    	|
-| TOOL5 	|     `3.142.7`    	|
+| Dependência1 		|   `2.7.0` 	| 
+| Dependência2 	|     `3.1.2`    	|
+| Dependência3 	|     `3.32.1`    	|
+| Dependência4 	|     `3.4.2`    	|
+| Dependência5 	|     `3.142.7`    	|
 
 - - - -
-## Bug Report
+## Relatório de erros
 
-* **Bug id:** [001]
-	* **Severity:** High 
-	* **Priority:** High 
-	* **Reported By:** me
-	* **Reported On:** 10/01/2021
-	* **Status:** New
-	* **Environment:** Safari
-	* **Description:** Describe here a brief summary of the problem.
-	* **Steps to reproduce the problem:** Describe here the sequence of steps necessary to reproduce the problem:
-	    1. Step 1
-	    2. Step 2
-	    3. Step 3
-	    4. Step N
-    * **Obtained Result:** Through the steps described above, what should have happened? How did the system really behave? What is the evidence for this malfunction? Add screenshots, videos, logs ... And everything else that can provide information about the current wrong state of the system.
-    * **Expected Result:** Through the steps described above, what should happen? What behavior should the system behave? Put here evidence that justifies this (Text of the documentation you used to reach this conclusion).
+* **Id do bug:** [001]
+* **Gravidade:** Alta
+* **Prioridade:** Alta
+* **Relatado por:** eu
+* **Relatado em:** 01/10/2021
+* **Status:** Novo
+* **Ambiente:** Safari
+* **Descrição:** Descreva aqui um breve resumo do problema.
+* **Passos para reproduzir o problema:** Descreva aqui a sequência de passos necessários para reproduzir o problema:
+1. Etapa 1
+2. Etapa 2
+3. Etapa 3
+4. Etapa N
+	* **Resultado obtido:** Através das etapas descritas acima, o que deveria ter acontecido? Como o sistema realmente se comportou? Qual é a evidência para este mau funcionamento? Adicione capturas de tela, vídeos, logs ... E tudo o mais que possa fornecer informações sobre o estado incorreto atual do sistema.
+	* **Resultado Esperado:** Através das etapas descritas acima, o que deve acontecer? Qual comportamento o sistema deve se comportar? Coloque aqui evidências que justifiquem isso (Texto da documentação que você utilizou para chegar a esta conclusão).
 
 
-* **Bug id:** [002]
-	* **Severity:** High 
-	* **Priority:** High 
-	* **Reported By:** me
-	* **Reported On:** 10/01/2021
-	* **Status:** Fixed
-	* **Environment:** Chrome
-	* **Description:** Describe here a brief summary of the problem.
-	* **Steps to reproduce the problem:** Describe here the sequence of steps necessary to reproduce the problem:
-	    1. Step 1
-	    2. Step 2
-	    3. Step 3
-	    4. Step N
-    * **Obtained Result:** Through the steps described above, what should have happened? How did the system really behave? What is the evidence for this malfunction? Add screenshots, videos, logs ... And everything else that can provide information about the current wrong state of the system.
-    * **Expected Result:** Through the steps described above, what should happen? What behavior should the system behave? Put here evidence that justifies this (Text of the documentation you used to reach this conclusion).
-
+* **Id do bug:** [002]
+* **Gravidade:** Alta
+* **Prioridade:** Alta
+* **Relatado por:** eu
+* **Relatado em:** 01/10/2021
+* **Status:** Fixo
+* **Ambiente:** Chrome
+* **Descrição:** Descreva aqui um breve resumo do problema.
+* **Passos para reproduzir o problema:** Descreva aqui a sequência de passos necessários para reproduzir o problema:
+1. Etapa 1
+2. Etapa 2
+3. Etapa 3
+4. Etapa N
+	* **Resultado obtido:** Através das etapas descritas acima, o que deveria ter acontecido? Como o sistema realmente se comportou? Qual é a evidência para este mau funcionamento? Adicione capturas de tela, vídeos, logs ... E tudo o mais que possa fornecer informações sobre o estado incorreto atual do sistema.
+	* **Resultado Esperado:** Através das etapas descritas acima, o que deve acontecer? Qual comportamento o sistema deve se comportar? Coloque aqui evidências que justifiquem isso (Texto da documentação que você utilizou para chegar a esta conclusão).
 - - - -
-## References
-Important links that supported the development of this testing strategy:
+## Referências
+Links importantes que apoiaram o desenvolvimento desta estratégia de teste:
 
-* [Make a README](https://www.makeareadme.com/)
-* [How to create Test Strategy Document (Sample Template)](https://www.guru99.com/how-to-create-test-strategy-document.html)
-* [How To Write Test Strategy Document (With Sample Test Strategy Template)](https://www.softwaretestinghelp.com/writing-test-strategy-document-template/)
-* [Online Markdown Editor - Dillinger, the Last Markdown Editor ever](https://dillinger.io/)
-* [What is Test Scenario? Template with Examples](https://www.guru99.com/test-scenario.html)
-* [Boundary Value Analysis and Equivalence Partitioning Testing](https://www.guru99.com/equivalence-partitioning-boundary-value-analysis.html)
-* [Decision Table Testing: Learn with Example](https://www.guru99.com/decision-table-testing.html)
-* [What is State Transition Testing? Diagram, Technique, Example](https://www.guru99.com/state-transition-testing.html#1)
-* [How to Choose Which Test to Automate?](https://devqa.io/choose-tests-automate/)
+* [Faça um README](https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fwww.makeareadme.com%2F)
+* [Como criar um documento de estratégia de teste (modelo de amostra)](https://translate.google.com/translate?sl=en&tl=pt&u=https://www.guru99.com/how-to-create-test-strategy-document.html)
+* [Como Escrever Um Documento De Estratégia De Teste (Com Modelo De Estratégia De Teste De Amostra)](https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fwww.softwaretestinghelp.com%2Fwriting-test-strategy-document-template%2F)
+* [Editor de Markdown Online - Dillinger, o Último Editor de Markdown de todos os tempos](https://dillinger.io/)
+* [O que é cenário de teste? Modelo com exemplos](https://translate.google.com/translate?sl=en&tl=pt&u=https://www.guru99.com/test-scenario.html)
+* [Análise de valor limite e teste de particionamento de equivalência](https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fwww.guru99.com%2Fequivalence-partitioning-boundary-value-analysis.html)
+* [Teste da Tabela de Decisão: Aprenda com Exemplos](https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fwww.guru99.com%2Fdecision-table-testing.html)
+* [O que é teste de transição de estado? Diagrama, Técnica, Exemplo](https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fwww.guru99.com%2Fstate-transition-testing.html%231)
+* [Como escolher qual teste automatizar?](https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fdevqa.io%2Fchoose-tests-automate%2F)
+* [4 etapas simples para selecionar a ferramenta certa de automação de teste para o seu projeto](https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fwww.saviantconsulting.com%2Fblog%2F4-steps-select-test-automation-tool.aspx)
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-* [4 Simple Steps to Select the Right Test Automation tool for your Project](https://www.saviantconsulting.com/blog/4-steps-select-test-automation-tool.aspx)
-* [Template used in this document](https://github.com/knludi/testing-strategy-template)
+* [Este template - English Version](https://github.com/knludi/testing-strategy-template)
 
 
 
