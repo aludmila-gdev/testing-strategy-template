@@ -6,17 +6,17 @@ O que é este documento? o que eu encontro nele? como foi dividido? Que tópicos
 Esta documentação possui as seguintes seções:
 
 1. [Abordagem de teste](#abordagem-de-teste)
-2. [Entregáveis de teste](#entregaveis-de-teste)
-3. [Cenários de teste](#cenarios-de-teste)
+2. [Entregáveis de teste](#entregáveis-de-teste)
+3. [Cenários de teste](#cenários-de-teste)
 4. [Ambiente de Testes](#ambiente-de-testes)
-5. [Abordagem para automação de teste](#abordagem-para-automacao-de-teste)
+5. [Abordagem para automação de teste](#abordagem-para-automação-de-teste)
     * [Escolhendo a ferramenta para automatizar testes de UI](#escolhendo-a-ferramenta-para-automatizar-testes-de-ui)
-    * [Escolha dos testes que serão automatizados na UI](#ecolha-dos-testes-que-serao-automatizados-na-ui)
+    * [Escolha dos testes que serão automatizados na UI](#ecolha-dos-testes-que-serão-automatizados-na-ui)
 6. [Executando os scripts de teste](#executando-os-scripts-de-teste)
-7. [Relatório de teste](#relatorio-de-teste)
-8. [Dependências](#dependencias)
-9. [Relatório de erros](#relatorio-de-erros)
-10. [Referências](#referencias)
+7. [Relatório de teste](#relatório-de-teste)
+8. [Dependências](#depêndencias)
+9. [Relatório de erros](#relótorio-de-erros)
+10. [Referências](#referências)
 
 - - - -
 ## Abordagem de teste
